@@ -1,0 +1,42 @@
+#title {
+	font-weight: 100;
+	word-wrap: break-word;
+    text-align: center;
+    font-size: 70px;
+    font-family:"aktiv-grotesk-std", "Helvetica Neue", "Helvetica";
+}
+
+.sub {
+	font-weight: 100;
+    text-align: center;
+    font-size: 35px;
+    font-family:"aktiv-grotesk-std", "Helvetica Neue", "Helvetica";	
+}
+
+.dwolla_title{
+	color: black;
+}
+
+.dwolla_title:hover{
+	text-decoration: none;
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+body {
+	background-color: #f8f9fa;
+}
+
+h3.sub:before,
+h3.sub:after {
+  display: inline-block;
+  height: 1px;
+  width: 15%;
+  background: #b1aba0;
+  content: "";
+  vertical-align: middle;
+}
