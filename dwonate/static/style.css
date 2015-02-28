@@ -6,6 +6,15 @@
     font-family:"aktiv-grotesk-std", "Helvetica Neue", "Helvetica";
 }
 
+.button {
+	margin-top: 50px;
+	text-align: center;
+}
+
+input {
+	padding: 10px;
+}
+
 .sub {
 	font-weight: 100;
     text-align: center;
@@ -35,7 +44,7 @@ h3.sub:before,
 h3.sub:after {
   display: inline-block;
   height: 1px;
-  width: 15%;
+  width: 10%;
   background: #b1aba0;
   content: "";
   vertical-align: middle;
