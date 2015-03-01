@@ -29,6 +29,7 @@ class Listener(myo.DeviceListener):
     def on_pose(self, myo, timestamp, pose):
     	#print_('on_pose', pose)
     	f.write(str(pose)+"\n")
+        f.flush()
 
 def main():
     hub = myo.Hub()

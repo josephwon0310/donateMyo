@@ -13,20 +13,16 @@ constants.client_secret = "aImQ1onBcklDmG2yqOXXb21GLWeqR7Cg7cLIAs9Woh6fR15D+h"
 constants.access_token = "uUnrT/TEJoZDPoHb2YJh/4quuEKZOWjfXQ26a9n+4M8bO89Epb"
 constants.pin = "0310"
 
-f = open("pose.txt", "r")
-
-def myo():
+def myo_run():
 	myo_control.main()
 
-writing = multiprocessing.Process(target=myo)
+myo = multiprocessing.Process(target=myo_run)
 
 def reader():
     pose = subprocess.check_output(['tail', '-1', "pose.txt"])
     if "finger" in str(pose) or "wave_out" in str(pose):
     	print "YO!"
-    threading.Timer(2,reader).start()
-
-reading = multiprocessing.Process(target=reader)
+    threading.Timer(0.5,reader).start()
 
 @app.route("/")
 def index():
@@ -40,6 +36,6 @@ def donate():
 
 
 if __name__ == "__main__":
-	#reading.start()
-	writing.start()
+	reader()
+	myo.start()
 	app.run(debug=True)
