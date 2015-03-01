@@ -1,0 +1,17 @@
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: rest>
+<pose_t: fingers_spread>
+<pose_t: wave_out>
+<pose_t: rest>
+<pose_t: fist>
+<pose_t: rest>

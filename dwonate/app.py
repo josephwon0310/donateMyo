@@ -47,8 +47,8 @@ def index():
 
 @app.route('/donate', methods=['POST'])
 def donate():
-	# reader()
-	# myo.start()
+	reader()
+	myo.start()
 	balance = accounts.balance()
 	return render_template('donate.html', balance=balance)
 
