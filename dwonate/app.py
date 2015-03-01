@@ -1,4 +1,4 @@
-import multiprocessing, subprocess
+import multiprocessing, subprocess, threading, time
 import fetcher
 import request
 import myo_control
@@ -13,11 +13,20 @@ constants.client_secret = "aImQ1onBcklDmG2yqOXXb21GLWeqR7Cg7cLIAs9Woh6fR15D+h"
 constants.access_token = "uUnrT/TEJoZDPoHb2YJh/4quuEKZOWjfXQ26a9n+4M8bO89Epb"
 constants.pin = "0310"
 
-f = open('pose.txt', 'r')
+f = open("pose.txt", "r")
 
 def myo():
 	myo_control.main()
 
+writing = multiprocessing.Process(target=myo)
+
+def reader():
+    pose = subprocess.check_output(['tail', '-1', "pose.txt"])
+    if "finger" in str(pose) or "wave_out" in str(pose):
+    	print "YO!"
+    threading.Timer(2,reader).start()
+
+reading = multiprocessing.Process(target=reader)
 
 @app.route("/")
 def index():
@@ -29,11 +38,8 @@ def donate():
 	balance = accounts.balance()
 	return render_template('donate.html', balance=balance)
 
-#@app.route('/donate/<rain>')
-#def rain():
-
 
 if __name__ == "__main__":
-	writing = multiprocessing.Process(target=myo)
+	#reading.start()
 	writing.start()
 	app.run(debug=True)

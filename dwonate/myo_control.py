@@ -1,4 +1,5 @@
 import myo
+import subprocess
 myo.init()
 
 # from myo.lowlevel import pose_t, stream_emg
@@ -28,7 +29,6 @@ class Listener(myo.DeviceListener):
     def on_pose(self, myo, timestamp, pose):
     	#print_('on_pose', pose)
     	f.write(str(pose)+"\n")
-
 
 def main():
     hub = myo.Hub()
