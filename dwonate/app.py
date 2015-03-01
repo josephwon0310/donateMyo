@@ -23,16 +23,20 @@ myo = multiprocessing.Process(target=myo_run)
 
 def reader():
     pose = subprocess.check_output(['tail', '-1', "pose.txt"])
+    money = 0
     if "finger" in str(pose) or "wave_out" in str(pose):
-    	result.append("send")
+    	result.append(1)
 
     if "fist" in str(pose):
     	time.sleep(1)
     	myo.terminate()
     	for send in result:
-    		print send
+    		money += 10
 
-    threading.Timer(0.5, reader).start()
+    	print(transactions.send('812-197-4121',money))
+    	print "Transaction Complete!"
+
+    t = threading.Timer(0.5, reader).start()
 
 
 
