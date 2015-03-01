@@ -19,8 +19,11 @@
 		</h3>
 
 		<div class="button">
-			<h3><a href="/donate"><input type="submit" value="Start Donating!"></a>
-			</h3>
+			<form action="/donate" method="POST">
+				<input type="text" name="id" size="30" class="textbox" placeholder="Enter the recipient's Dwollo id" autocomplete="off"><br>
+				<h3><input type="submit" value="Start Donating!">
+				</h3>
+			</form>
 		</div>
 
 		<div class ='img'>
