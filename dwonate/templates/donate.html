@@ -5,23 +5,20 @@
 		<meata charset="utf-8">
 		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-		<!--<style>
-		body {font: 14px / 1.5em 'Gloria Hallelujah', cursive;}
-        .fontFlake{
-                position:absolute;
-                top:-50px;
-                left:0px;
-                z-index:10;
-                position:block;
-        }
-        </style>-->
 		<script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='snow.js') }}"></script>
 	</head>
 
 	<body>
-		<p>placeholder</p>
-		<h3>You have ${{ balance }} in your account</h3>
+		<script type="text/javascript">
+			$(function() {
+    			$(document).snow({ SnowImage: "snow.gif" });
+			});
+		</script>
+		<h2 id="account" style="text-align:center">Hold your fist to stop and transact</h2>
+		<div id="gif" style="text-align:center">
+			<img src="/static/giphy.gif" alt="img">
+		</div>
 
 	</body>
 </html>

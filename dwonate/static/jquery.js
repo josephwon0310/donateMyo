@@ -2,9 +2,7 @@
  * Created by josephwon on 12/18/14.
  */
 
-
 $(document).ready(function(){
-  etx.init();
   $('#title').mouseenter(function(){
     $(this).stop(true, true).fadeTo('fast',0.3);
   });
@@ -15,11 +13,7 @@ $(document).ready(function(){
 
 });
 
-
-
-
-
-
+//$(document).snow({ SnowImage: "bill.jpg" });
 
 
 
