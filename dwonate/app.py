@@ -31,7 +31,7 @@ def reader():
     	time.sleep(1)
     	myo.terminate()
     	for send in result:
-    		money += 10
+    		money += 5
 
     	print(transactions.send('812-197-4121',money))
     	print "Transaction Complete!"
